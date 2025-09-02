@@ -1,6 +1,6 @@
 "use client";
 import { motion } from 'motion/react';
-import React, {useState, useRef, useEffect, FormEvent} from 'react';
+import React, {useState, useRef, useEffect, FormEvent, useCallback} from 'react';
 
 const App = () => {
   const [activePage, setActivePage] = useState('home');
@@ -814,6 +814,7 @@ const App = () => {
       </div>
   );
 
+
   const DemoPage = () => (
     <div className="min-h-screen bg-gray-50 py-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -832,8 +833,7 @@ const App = () => {
               </label>
               <textarea
                 id="demoInput"
-                value={demoInput}
-                onChange={(e) => setDemoInput(e.target.value)}
+
                 rows={5}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
                 placeholder="Hi, I need a new roof for my house. The old one is leaking. Can you help? My name is Dan and I live at 123 Main St."
@@ -841,6 +841,7 @@ const App = () => {
             </div>
             <button
               type="submit"
+
               className="bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transform hover:scale-105 transition-all duration-200 shadow-lg"
             >
               See Aiden's Suggestion
